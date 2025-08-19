@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scan Health – Signup</title>
+
+  <link rel="stylesheet" href="../css/login_signup.css">
+</head>
+<body>
+  <!-- Loading Page -->
+  <div id="loading_page">
+    <img src="../Imgs/logo.png" alt="logo" class="logo">
+    <h1>Welcome</h1>
+  </div>
+
+  <div id="nav-root">
+  </div>
+
+  <!-- Signup (uses same classes as login so CSS applies) -->
+  <main class="auth-wrap">
+    <section class="auth-card">
+      <header class="auth-head">
+        <div class="auth-badge">🆕</div>
+        <h1>Create your account</h1>
+        <p>Join Scan Health</p>
+      </header>
+
+      <form  action="/signup" method="POST" class="auth-form">
+        <label class="field">
+          <span class="field-icon">📧</span>
+          <input type="email" name="email" placeholder="you@domain.com" required>
+        </label>
+
+        <label class="field">
+          <span class="field-icon">🔒</span>
+          <input type="password" name="password" placeholder="Password" required>
+        </label>
+
+        <label class="field">
+          <span class="field-icon">🔒</span>
+          <input type="password" name="confirm_password" placeholder="Confirm password" required>
+        </label>
+
+        <button type="submit" class="btn-primary">Create account</button>
+      </form>
+
+      <p class="auth-note">Already have an account? <a class="link" href="./login.html">Log in</a></p>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

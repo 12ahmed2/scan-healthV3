@@ -1,0 +1,245 @@
+/* =============================
+   GLOBAL RESET & VARIABLES
+============================= */
+:root {
+  --navy: #162E51;
+  --aqua: #58C8C4;
+  --white: #FEFFFF;
+  --steel: #4B6070;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+/* =============================
+   LOADING PAGE
+============================= */
+#loading_page {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: var(--navy);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loading_page img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+
+/* =============================
+   NAVBAR
+============================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 2.2rem;
+  background-color: var(--navy);
+  border-bottom: 2px solid #bcbebe;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  color: var(--aqua);
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+/* Nav Links (hidden off-screen by default) */
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 30%;
+  max-width: 320px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+  border-left: 3px solid var(--aqua);
+  transition: right 0.4s ease;
+}
+
+.nav-links li {
+  display: flex;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--navy);
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--aqua);
+  transform: scale(1.1);
+}
+
+/* Hamburger menu */
+#menu-toggle {
+  display: none;
+}
+
+.menu-btn {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.menu-btn::before {
+  content: "\2630"; /* ☰ */
+  font-size: 1.8rem;
+}
+
+#menu-toggle:checked + .menu-btn {
+  color: var(--aqua);
+}
+
+#menu-toggle:checked + .menu-btn::before {
+  content: "\2716"; /* ✖ */
+}
+
+/* Show sliding menu */
+#menu-toggle:checked + .menu-btn + .nav-links {
+  right: 0;
+}
+
+/* =============================
+   HERO / MAIN SECTION
+============================= */
+.main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 2rem 2rem;
+  background: linear-gradient(to bottom, var(--navy), #0e1f3d);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.main .content {
+  max-width: 800px;
+}
+
+.main h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--aqua);
+  margin-bottom: 20px;
+}
+
+.main p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 15px;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--navy);
+  background-color: var(--aqua);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: var(--steel);
+  color: var(--white);
+}
+
+/* =============================
+   ABOUT SECTION
+============================= */
+.section {
+  padding: 5rem 2rem;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.section h2 {
+  color: var(--navy);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: var(--steel);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .nav-links {
+    width: 70%;
+    gap: 2.5rem;
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+  }
+
+  .main {
+    padding-top: 7rem;
+  }
+
+  #menu-toggle:checked ~ .main {
+    transform: translateX(-70%);
+  }
+}

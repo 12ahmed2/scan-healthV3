@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Project</title>
+
+  <link rel="stylesheet" href="../css/scanner.css">
+</head>
+<body>
+  <!-- Loading Page -->
+  <div id="loading_page">
+    <img src="../Imgs/logo.png" alt="logo" class="logo">
+    <h1>Welcome</h1>
+  </div>
+
+  <div id="nav-root">
+  </div>
+
+  <!-- Scanner Section -->
+  <section id="qr-reader">
+    <h1 class="scanner-title">QR Code Scanner</h1>
+    <p class="scanner-subtitle">Secure medical QR code scanning with real-time camera access.</p>
+
+    <!-- Frame -->
+    <div class="scanner-frame">
+      <video id="reader" autoplay playsinline muted></video>
+      <canvas id="canvas"></canvas>
+      <div class="overlay"></div>
+      <div id="placeholder">
+        <p>Camera Preview</p>
+        <small>Grant camera permission to start</small>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div id="controls">
+      <button id="start-button">▶ Start Scanning</button>
+      <button id="stop-button" disabled>■ Stop Scanning</button>
+    </div>
+
+    <!-- Result Box -->
+    <div id="qr-result">
+      <h3>Scan Result</h3>
+      <div class="result-box">
+        <span id="result">No QR code detected yet...</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+  <script src="../js/scanner.js"></script>
+</body>
+</html>

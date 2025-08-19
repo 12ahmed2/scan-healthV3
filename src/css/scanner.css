@@ -1,0 +1,113 @@
+/* Page layout */
+#qr-reader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #F5F5F7;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.scanner-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #162E51;
+  margin-bottom: 0.5rem;
+}
+
+.scanner-subtitle {
+  color: #4B6070;
+  margin-bottom: 1.5rem;
+}
+
+/* Scanner frame */
+.scanner-frame {
+  position: relative;
+  width: 320px;
+  height: 240px;
+  background: black;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+#reader {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#canvas {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 12px;
+  border: 2px solid #58C8C4;
+  border-radius: 8px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+#placeholder {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+#controls button {
+  margin: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #58C8C4;
+  color: #162E51;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#controls button:hover {
+  background-color: #4B6070;
+  color: #FEFFFF;
+}
+
+#stop-button {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Result box */
+#qr-result {
+  margin-top: 1.5rem;
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+}
+
+#qr-result h3 {
+  color: #162E51;
+  margin-bottom: 0.5rem;
+}
+
+.result-box {
+  background: #fff;
+  border: 2px dashed #58C8C4;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 60px;
+  word-break: break-word;
+}

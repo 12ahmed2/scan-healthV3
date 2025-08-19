@@ -1,0 +1,69 @@
+:root{
+  --navy:#162E51; --aqua:#58C8C4; --steel:#4B6070; --white:#FEFFFF;
+  --nav-h:64px; --radius:14px; --shadow:0 14px 30px rgba(0,0,0,.18);
+}
+
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#0f2244;color:#0f2244;}
+.logo{color:var(--aqua);font-weight:800;letter-spacing:.4px}
+
+/* simple menu (keep your existing CSS if you prefer) */
+#menu-toggle{display:none}.menu-btn{color:#fff;font-size:28px;cursor:pointer}
+.menu-btn::before{content:"\2630"}
+#menu-toggle:checked+.menu-btn::before{content:"\2716"}
+
+
+
+
+/* Auth layout */
+.auth-wrap{
+  min-height:calc(100vh - var(--nav-h));
+  padding:calc(var(--nav-h) + 48px) 16px 48px; /* pushes below navbar */
+  display:flex;align-items:start;justify-content:center;
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(88,200,196,.12), transparent 70%),
+    radial-gradient(1000px 600px at 120% 10%, rgba(88,200,196,.08), transparent 70%),
+    linear-gradient(#0f2244,#0f2244);
+}
+
+.auth-card{
+  width:100%;max-width:460px;background:linear-gradient(180deg,#ffffff,#f6f9ff);
+  border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 26px 22px;
+}
+
+.auth-head{text-align:center;margin-bottom:18px}
+.auth-badge{width:56px;height:56px;border-radius:14px;margin:0 auto 10px;background:rgba(88,200,196,.18);display:grid;place-items:center;font-size:26px;color:#0f2244}
+.auth-head h1{margin:6px 0 4px;font-size:26px;color:#0f2244}
+.auth-head p{margin:0;color:#5a6b85;font-size:14.5px}
+
+/* Form */
+.auth-form{display:grid;gap:14px;margin-top:12px}
+.field{position:relative;display:block}
+.field-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#7a8aa6;font-size:16px}
+.field input{
+  width:100%;padding:14px 14px 14px 40px;background:#fff;border:1px solid #d5ddec;border-radius:10px;
+  font-size:15px;outline:0;transition:border .2s, box-shadow .2s;
+}
+.field input:focus{border-color:var(--aqua);box-shadow:0 0 0 3px rgba(88,200,196,.25)}
+
+.auth-row{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.check{color:#586884;font-size:14px}
+.link{color:var(--aqua);text-decoration:none;font-weight:600}
+.link:hover{text-decoration:underline}
+
+/* Button */
+.btn-primary{
+  margin-top:6px;width:100%;padding:14px 16px;border:0;border-radius:10px;
+  background:var(--aqua);color:#0f2244;font-weight:800;letter-spacing:.2px;
+  cursor:pointer;transition:filter .2s, transform .02s ease-in;
+}
+.btn-primary:hover{filter:brightness(.95)}
+.btn-primary:active{transform:translateY(1px)}
+
+.auth-note{margin-top:14px;text-align:center;color:#5a6b85;font-size:14px}
+.auth-note .link{font-weight:700}
+
+/* Small screens */
+@media(max-width:480px){
+  .auth-card{padding:22px 18px}
+  .auth-head h1{font-size:22px}
+}

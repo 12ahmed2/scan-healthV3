@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Scan Health</title>
+  <link rel="stylesheet" href="../css/login_signup.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="nav-root">
+  </div>
+  <!-- End Navbar -->
+
+  <main class="auth-wrap">
+    <section class="auth-card">
+      <header class="auth-head">
+        <div class="auth-badge">🔐</div>
+        <h1>Login to Scan Health</h1>
+        <p>Access your healthcare dashboard</p>
+      </header>
+
+      <form action="/login" method="POST" class="auth-form">
+        <label class="field">
+          <span class="field-icon">📧</span>
+          <input type="email" name="email" placeholder="doctor@hospital.com" required />
+        </label>
+
+        <label class="field">
+          <span class="field-icon">🔒</span>
+          <input type="password" name="password" placeholder="••••••••" required />
+        </label>
+
+        <div class="auth-row">
+          <label class="check"><input type="checkbox" /> Remember me</label>
+          <a href="#" class="link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">➡️ Login to Dashboard</button>
+      </form>
+
+      <p class="auth-note">Don’t have an account? <a class="link" href="./signup.html">Sign up here</a></p>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
